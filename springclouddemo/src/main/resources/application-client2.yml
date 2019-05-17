@@ -1,0 +1,21 @@
+management:
+  health:
+    mail:
+      enabled: false
+  endpoints:
+    web:
+      base-path: /manage
+      exposure:
+        include: ["*"]
+eureka:
+    instance:
+        prefer-ip-address: true
+    client:
+        serviceUrl:
+            defaultZone: http://localhost:8762/eureka/,http://localhost:8763/eureka/
+spring:
+    application:
+        name: client
+server:
+   port: 8002
+

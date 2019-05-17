@@ -23,6 +23,6 @@ public class HelloController {
     public String index(){
         ServiceInstance instance = discoveryClient.getLocalServiceInstance();
         logger.info("/hello,host:"+instance.getHost()+",prot"+instance.getPort()+",service_id:"+instance.getServiceId());
-        return "Hello World";
+        return "Hello World"+"/hello,host:"+instance.getHost()+",prot"+instance.getPort()+",service_id:"+instance.getServiceId();
     }
 }
