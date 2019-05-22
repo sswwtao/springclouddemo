@@ -8,5 +8,5 @@ spring:
     application:
         name: riboon-consumer
 server:
-   port: 9001
+   port: 9002
 
