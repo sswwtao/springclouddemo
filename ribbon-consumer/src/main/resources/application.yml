@@ -1,0 +1,12 @@
+eureka:
+    instance:
+        prefer-ip-address: true
+    client:
+        serviceUrl:
+            defaultZone: http://localhost:8762/eureka/,http://localhost:8763/eureka/
+spring:
+    application:
+        name: riboon-consumer
+server:
+   port: 9001
+
