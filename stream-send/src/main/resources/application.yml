@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: stream-send
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: springcloud
+    password: 123456
+  cloud:
+    stream:
+      bindings:
+        myOutput:
+          destination: minestream
+          producer:
+            partitionKeyExpression: payload
+            partionCount: 2
+server:
+   port: 8005

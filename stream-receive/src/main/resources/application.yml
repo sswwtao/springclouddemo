@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: stream-receive
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: springcloud
+    password: 123456
+  cloud:
+    stream:
+      bindings:
+        myInput:
+          destination: minestream
+          group: stream
+          consumer:
+            #通过该参数开启消费者分区功能
+            partitioned: true
+      #该参数指定了当前消费者的总实例数量
+      instance-count: 2
+      #该参数设置了当前实例的索引号，从 0 开始，最大值为 spring.cloud.stream.instance-count 参数 - 1
+      instance-index: 0
+server:
+   port: 8006

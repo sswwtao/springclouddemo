@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: rabbitmq-send
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: springcloud
+    password: 123456
+  cloud:
+    stream:
+      bindings:
+        myOutput:
+          destination: minestream
+          producer:
+            #通过该参数指定了分区键的表达式规则，可以根据实际的输出消息规则配置 SpEL 来生成合适的分区键
+            partitionKeyExpression: payload
+            partitionCount: 2
+
